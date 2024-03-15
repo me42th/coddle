@@ -5,7 +5,7 @@ use Me42th\Coddle\Traits\GenerateTrait;
 class GenerateCommand extends DefaultCommand
 {
     use GenerateTrait;
-    static $name = 'generate:command';
+    static $name = 'generate';
     static $description = 'Generate your commands';
     static $help = 'Will create what you need';
     static $args = ['*name:Name of the command'];
@@ -14,7 +14,9 @@ class GenerateCommand extends DefaultCommand
     public function handle():void
     {
         $name = $this->arg('name');
-        $status = $this->action($name);
+        $name = strtolower($name);
+        $this->action($name);
+        $this->info("Created Trait, Command and Test for $name");
     }
 
     public function test():string
