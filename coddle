@@ -1,0 +1,10 @@
+<?php
+const DS = DIRECTORY_SEPARATOR;
+
+require __DIR__.DS.'vendor'.DS.'autoload.php';
+
+require __DIR__.DS.'app'.DS.'helper_functions.php';
+
+require __DIR__.DS.'app'.DS.'kernel.php';
+
+

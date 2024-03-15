@@ -1,0 +1,20 @@
+{
+    "name": "me42th/coddle",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Me42th\\Coddle\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "me42th",
+            "email": "david.meth@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "symfony/console": "^6.4",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
