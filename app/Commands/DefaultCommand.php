@@ -124,7 +124,5 @@ abstract class DefaultCommand extends Command {
     }
 
     abstract protected function handle():void;
-
-
     abstract protected function test():string;
 }
