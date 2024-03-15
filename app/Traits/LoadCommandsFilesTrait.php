@@ -1,7 +1,8 @@
 <?php
 namespace Me42th\Coddle\Traits;
 
-trait LoadCommandsFilesTrait {
+trait LoadCommandsFilesTrait
+{
 
     public function loadCommands():array{
 

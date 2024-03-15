@@ -1,10 +1,11 @@
 <?php
 namespace Me42th\Coddle\Traits;
 
-trait {name}Trait {
+trait {name}Trait
+{
 
     public function action():void
     {
-        return __METHOD__;
+
     }
 }

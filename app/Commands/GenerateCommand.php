@@ -2,7 +2,8 @@
 namespace Me42th\Coddle\Commands;
 use Me42th\Coddle\Traits\GenerateTrait;
 
-class GenerateCommand extends DefaultCommand {
+class GenerateCommand extends DefaultCommand
+{
     use GenerateTrait;
     static $name = 'generate:command';
     static $description = 'Generate your commands';
@@ -14,5 +15,10 @@ class GenerateCommand extends DefaultCommand {
     {
         $name = $this->arg('name');
         $status = $this->action($name);
+    }
+
+    public function test():string
+    {
+        return 'GenerateTest';
     }
 }

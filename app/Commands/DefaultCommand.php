@@ -48,6 +48,8 @@ abstract class DefaultCommand extends Command {
 
     private function setOptions() : void
     {
+        $this->addOption('test','t',InputOption::VALUE_NONE,'Run the test for this command',null);
+
         foreach(static::$options as $option){
             if (str_contains($option, '?')) {
                 $value_required = InputOption::VALUE_OPTIONAL;
@@ -71,11 +73,23 @@ abstract class DefaultCommand extends Command {
         try{
             $this->input = $input;
             $this->output = $output;
-            $this->handle();
+            $test = $this->option('test')?true:false;
+            if($test){
+                $this->executeTest();
+            } else {
+                $this->handle();
+            }
             return self::SUCCESS;
         } catch(Exception $ex){
             return self::ERROR;
         }
+    }
+
+    private function executeTest(){
+        $shell_return = '';
+        $file_name = $this->test();
+        exec("./vendor/bin/pest ./tests/Unit/$file_name.php", $shell_return);
+        echo implode("\n",$shell_return);
     }
 
     protected final function arg(string $arg_name):?string{
@@ -110,4 +124,7 @@ abstract class DefaultCommand extends Command {
     }
 
     abstract protected function handle():void;
+
+
+    abstract protected function test():string;
 }

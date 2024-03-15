@@ -1,0 +1,9 @@
+<?php
+use Me42th\Coddle\Commands\{name}Command;
+
+test('Command {name}', function () {
+    ${name} = new {name}Command;
+
+    // https://pestphp.com/docs/expectations#expect-toBeInstanceOf
+    expect(${name})->toBeInstanceOf({name}Command::class);
+});
