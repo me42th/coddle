@@ -1,0 +1,17 @@
+<?php
+use Me42th\Coddle\Commands\{name}Command;
+use function Pest\Faker\fake;
+
+test('Command {name}', function () {
+    // Arrange
+    ${name} = new {name}Command;
+    $data = [
+        fake()->name(),
+        fake()->name()
+    ];
+
+    // Act && Assert
+    expect(${name})->toBeInstanceOf({name}Command::class)
+        ->action(...$data)
+        ->toBe($data[0]);
+});

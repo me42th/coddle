@@ -1,0 +1,28 @@
+<?php
+namespace Me42th\Coddle\Commands;
+use Me42th\Coddle\Traits\{name}Trait;
+
+class {name}Command extends DefaultCommand
+{
+    use {name}Trait;
+
+    static $name = '{name}';
+    static $description = '{name} description';
+    static $help = '{name} help';
+    static $args = []; //['?optional_arg:The arg of the user','*required_arg:The arg of the user'];
+    static $options = []; //['-none_value_option:just a flag','?not_required_value_option:maybe something','*required_value_option:needs a value'];
+
+    public function handle():void
+    {
+        $this->info("Put your logic here: ".$this->trait());
+        $return = $this->action();
+        /*
+            $argument = $this->arg('argument');
+            $option = $this->option('required_value_option');
+            $this->info($option);
+            $this->comment($argument);
+            $this->error($this->action());
+        */
+    }
+
+}

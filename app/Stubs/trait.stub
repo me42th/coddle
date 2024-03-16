@@ -1,0 +1,11 @@
+<?php
+namespace Me42th\Coddle\Traits;
+
+trait {name}Trait
+{
+
+    public function action(...$data):mixed
+    {
+        return $data[0]??null;
+    }
+}
