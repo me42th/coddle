@@ -15,7 +15,8 @@ class {name}Command extends DefaultCommand
     public function handle():void
     {
         $this->info("Put your logic here: ".$this->trait());
-        $return = $this->action();
+        $result = $this->action();
+        $this->info("Your result: $result");
         /*
             $argument = $this->arg('argument');
             $option = $this->option('required_value_option');
